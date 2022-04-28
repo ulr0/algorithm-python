@@ -21,3 +21,19 @@ def solution(arr):
         answer = (answer * i) // gcd(answer, i)
 
     return answer
+
+# gcd 구하는 함수 만들기
+# a, b의 gcd = b, a%b의 gcd 
+# b가 0이 될 때 a가 최대공약수가 된다.
+def gcd(a, b):
+    if b == 0:
+        return a
+    else:
+        a, b = b, a % b
+    return gcd(a, b)
+
+#즉
+def gcd(a, b):
+    if b == 0:
+        return a
+    return gcd(b, a % b)
